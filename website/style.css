@@ -1,0 +1,247 @@
+*{
+    font-family: 'Irish Grover', cursive;
+    font-family: 'Inconsolata', monospace;
+    margin: 0;
+    padding: 0;
+
+}
+
+hr{
+    color: white;
+  border-width: 2px;
+  width: 70%;
+  margin:auto;
+  opacity: 50%;
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    #3616eb00,
+    rgba(255, 255, 255, 1),
+    #3616eb00
+  );
+}
+
+html{
+    background-color: #352F44;
+    scroll-behavior: smooth;
+}
+
+
+
+
+/* Home */
+
+
+
+
+
+
+h1{
+    font-size: xx-large;
+    padding-bottom: 2%;
+    color: aliceblue;
+}
+h4{
+    padding-bottom: 10%;
+}
+
+
+
+
+
+#header{
+    margin-top: 60px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navbar{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+
+.main{
+    height: 91vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-left{
+    margin: auto;
+}
+
+.main-right{
+    margin: auto;
+    margin-right: 40%;
+    margin-top: 180px;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+
+
+.container-item{
+    
+    width: 80%;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+/* Skills */
+
+
+.main-grid{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+.grid-item{
+  width: 100%;
+  height: 33%;
+}
+
+.grid-inner1, .grid-inner3{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+.grid-inner3{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 3px;
+
+}
+
+.grid-inner2{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    
+}
+
+.text{
+    margin: auto;
+    text-align: justify;
+}
+
+
+.gif{
+    margin: auto;
+}
+
+.title2>h1{
+    text-align: center;
+    padding-top: 40px;
+}
+
+
+
+
+/* hover effect */
+.profile{
+    border-radius: 50%;
+    -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  
+  
+}
+.profile:hover{
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.icon{  
+    padding: 20px 10px 20px 10px;
+    color: rgb(255, 255, 255);
+    -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    position: relative;
+}
+.icon:hover{
+    color: #000000;
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.icon::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transition: all 0.5s ;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: -1;
+}
+
+.icon:hover::after{
+    transform: translate(-50%,-50%) scale(1);
+    background-color: #D6B3B3;
+}
+
+.gif{
+    color: black;
+    -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.gif:hover{
+    color: #fbfafd;
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+
+}
+
+p:hover{
+    color: #fbfafd;
+    transition: .4s ease-in-out;
+
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+    .main{
+        
+    }
+    
+  }
