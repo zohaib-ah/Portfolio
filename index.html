@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio</title>
+  <title style="color: red;">Portfolio</title>
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="Assets/CSS/swiper-bundle.min.css">
+ 
   <link rel="stylesheet" href="/Assets/CSS/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -116,10 +116,10 @@
   <section id="projects">
     <h1 class="project-heading">Projects</h1>
 
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
+    <div class="project-container">
+      
 
-        <div class="swiper-slide">
+        <div class="project-item">
           <div class="project-image">
             <img src="Assets/images/yurt.png" alt="">
           </div>
@@ -134,7 +134,7 @@
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="project-item">
           <div class="project-image">
             <img src="Assets/images/base-converter.png" alt="">
           </div>
@@ -147,7 +147,7 @@
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="project-item">
           <div class="project-image">
             <img src="Assets/images/credit-card.png" alt="">
           </div>
@@ -160,7 +160,7 @@
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="project-item">
           <div class="project-image">
             <img src="Assets/images/Al-Asma-ul-Husna.png" alt="">
           </div>
@@ -172,10 +172,7 @@
               <h3 class="button-text">Learn More</h3></button>
           </div>
         </div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"><i class="fa-solid fa-chevron-right fa-fade fa-2xl"></i></div>
-      <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left fa-fade fa-2xl"></i></div>
+    
    
     </div>
     
@@ -201,50 +198,6 @@
 </footer>
 
 
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      // loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        "@0.00": {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        "@0.85": {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        "@1.00": {
-          slidesPerView: 2,
-          spaceBetween: 40,
-        },
-        "@1.50": {
-          slidesPerView: 3,
-          spaceBetween: 50,
-        },
-      },
-    });
-  </script>
 
 </body>
 
