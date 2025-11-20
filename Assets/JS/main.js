@@ -1,18 +1,26 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-    const skillElements = document.querySelectorAll('.grid-item');
+    const elements = document.querySelectorAll('.grid-item, .project-item');
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
             }
         });
     }, {
         threshold: 0.1
     });
 
-    skillElements.forEach(element => {
+    elements.forEach(element => {
         observer.observe(element);
+    });
+
+    VanillaTilt.init(document.querySelectorAll(".project-item"), {
+        max: 5,
+        speed: 400,
+        perspective: 500,
     });
 });
