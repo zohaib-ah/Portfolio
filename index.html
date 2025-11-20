@@ -23,7 +23,7 @@
 
 <body>
   <nav class="navbar">
-    <div class="navbar-item">
+    <div class="navbar-item container">
       <a href="#">
         <div class="icon"><i class="fa-solid fa-id-card fa-2xl"></i></div>
       </a>
@@ -41,7 +41,7 @@
   </nav>
   <section>
     <main>
-      <div class="main">
+      <div class="main container">
         <div class="main-left">
           <div class="image">
             <img class="profile" src="Assets/images/profile.jpg" width="250px" height="250px" />
@@ -67,149 +67,153 @@
   <hr>
 
   <section id="skills">
-    <div class="title2">
-      <h1>I AM GOOD AT</h1>
-    </div>
-
-    <div class="grid-item">
-      <div class="grid-inner3">
-        <div class="image1"><img class="gif" src="Assets/images/design.gif" height="160px" width="160px" alt=""></div>
-        <div class="text">
-          <P>
-            Designing has always been one of my favorite parts of creating something new.
-            I enjoy turning ideas into easy-to-use and visually appealing designs. During
-            my studies, I worked on several projects, including designing the UI for our
-            final year project, "Yurt," using Figma. I’ve also explored Blender and 3D modeling.
-            . For me, good design is about making technology simple and enjoyable to use.
-          </P>
-        </div>
+    <div class="container">
+      <div class="title2">
+        <h1>I AM GOOD AT</h1>
       </div>
-    </div>
-
-
-    <div class="grid-item">
-      <div class="grid-inner2">
-        <div class="image1"><img class="gif" src="Assets/images/coding.gif" height="160px" width="160px" alt=""></div>
-
-        <div class="text1">
-          <P>Programming is where I feel most at home. I’ve worked with languages like Python,
-            JavaScript, Java, and C++ to bring projects to life. For our final year project, I
-            developed the backend using Express.js and MongoDB, creating a solid and efficient
-            foundation for the app. I also enjoy working with low-level programming, which helps me
-            understand how computers really work. Solving problems and building systems from scratch
-            is something I truly enjoy.</P>
+      <div class="skills-container">
+        <div class="grid-item">
+          <div class="grid-inner3">
+            <div class="image1"><img class="gif" src="Assets/images/design.gif" height="160px" width="160px" alt=""></div>
+            <div class="text">
+              <P>
+                Designing has always been one of my favorite parts of creating something new.
+                I enjoy turning ideas into easy-to-use and visually appealing designs. During
+                my studies, I worked on several projects, including designing the UI for our
+                final year project, "Yurt," using Figma. I’ve also explored Blender and 3D modeling.
+                . For me, good design is about making technology simple and enjoyable to use.
+              </P>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="grid-item">
-      <div class="grid-inner1">
-        <div class="image1"><img class="gif" src="Assets/images/ml.gif" height="160px" width="160px" alt=""></div>
-        <div class="text">
-          <P>
-            Machine learning is an area I’m really passionate about. I’m especially interested
-            in large language models (LLMs). As part of our final year project,
-            I built a chatbot using the Llama 3.1 model, which was a great learning experience.
-            I’ve also taken some courses to deepen my understanding of machine learning
-            concepts and techniques. I’m excited to keep exploring this field and see how
-            AI can solve real-world problems.
-          </P>
+
+        <div class="grid-item">
+          <div class="grid-inner2">
+            <div class="image1"><img class="gif" src="Assets/images/coding.gif" height="160px" width="160px" alt=""></div>
+
+            <div class="text1">
+              <P>Programming is where I feel most at home. I’ve worked with languages like Python,
+                JavaScript, Java, and C++ to bring projects to life. For our final year project, I
+                developed the backend using Express.js and MongoDB, creating a solid and efficient
+                foundation for the app. I also enjoy working with low-level programming, which helps me
+                understand how computers really work. Solving problems and building systems from scratch
+                is something I truly enjoy.</P>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-inner1">
+            <div class="image1"><img class="gif" src="Assets/images/ml.gif" height="160px" width="160px" alt=""></div>
+            <div class="text">
+              <P>
+                Machine learning is an area I’m really passionate about. I’m especially interested
+                in large language models (LLMs). As part of our final year project,
+                I built a chatbot using the Llama 3.1 model, which was a great learning experience.
+                I’ve also taken some courses to deepen my understanding of machine learning
+                concepts and techniques. I’m excited to keep exploring this field and see how
+                AI can solve real-world problems.
+              </P>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   <hr>
   <section id="projects">
-    <h1 class="project-heading">Projects</h1>
+    <div class="container">
+      <h1 class="project-heading">Projects</h1>
 
-    <div class="project-container">
+      <div class="project-container">
 
 
-      <div class="project-item">
-        <div class="project-image">
-          <img src="Assets/images/yurt.png" alt="">
+        <div class="project-item">
+          <div class="project-image">
+            <img src="Assets/images/yurt.png" alt="">
+          </div>
+          <div class="project-content">
+            <h5>Javascript | Express</h5>
+            <hr class="card-line">
+            <p class="descrption">Yurt is a centralized collaborative learning platform designed to address the unique
+              challenges and demands of modern students, providing an all-in-one solution to streamline academic tasks and
+              enhance productivity</p>
+            <button class="button" onclick="window.open('https://github.com/zohaib-ah/yurt', '_blank')">
+              <h3 class="button-text">Learn More</h3>
+            </button>
+
+          </div>
         </div>
-        <div class="project-content">
-          <h5>Javascript | Express</h5>
-          <hr class="card-line">
-          <p class="descrption">Yurt is a centralized collaborative learning platform designed to address the unique
-            challenges and demands of modern students, providing an all-in-one solution to streamline academic tasks and
-            enhance productivity</p>
-          <button class="button" onclick="window.open('https://github.com/zohaib-ah/yurt', '_blank')">
-            <h3 class="button-text">Learn More</h3>
-          </button>
 
+        <div class="project-item">
+          <div class="project-image">
+            <img src="Assets/images/Runes&Realms.png" alt="Runes & Realms Project">
+          </div>
+          <div class="project-content">
+            <h5>MERN Stack | Generative AI </h5>
+            <hr class="card-line">
+            <p class="descrption">An interactive storytelling platform where users co-author branching narratives with an
+              AI. Features a full game economy with unlockable genres, consumable "boons," and dynamically generated,
+              themed PDF trophies for completed stories.</p>
+            <button class="button" onclick="window.open('https://www.runesandrealms.tech/', '_blank')">
+              <h3 class="button-text">Learn More</h3>
+            </button>
+          </div>
         </div>
+
+        <div class="project-item">
+          <div class="project-image">
+            <img src="Assets/images/base-converter.png" alt="">
+          </div>
+          <div class="project-content">
+            <h5>Inline Assembly | C++</h5>
+            <hr class="card-line">
+            <p class="descrption">This project demonstrates a Base Converter implemented in C++ with inline assembly,
+              showcasing the use of assembly instructions alongside high-level code. It supports conversions between
+              Decimal, Binary, and Hexadecimal number systems.</p>
+            <button class="button"
+              onclick="window.open(href='https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter', '_blank')">
+              <h3 class="button-text">Learn More</h3>
+            </button>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-image">
+            <img src="Assets/images/credit-card.png" alt="">
+          </div>
+          <div class="project-content">
+            <h5>C++</h5>
+            <hr class="card-line">
+            <p class="descrption">This project is a terminal-based program that validates credit card numbers using the
+              Luhn Algorithm. It also identifies the card issuer based on the input credit card number.</p>
+            <button class="button"
+              onclick="window.open(href='https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card', '_blank')">
+              <h3 class="button-text">Learn More</h3>
+            </button>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-image">
+            <img src="Assets/images/Al-Asma-ul-Husna.png" alt="">
+          </div>
+          <div class="project-content">
+            <h5>Html | Css | JavaScript</h5>
+            <hr class="card-line">
+            <p class="descrption">A simple website built with HTML, CSS, and JavaScript that displays the Names of Allah.
+              Users can click on a name to hear its pronunciation, offering a seamless and engaging experience.</p>
+            <button class="button"
+              onclick="window.open(href='Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html', '_blank')">
+              <h3 class="button-text">Learn More</h3>
+            </button>
+          </div>
+        </div>
+
+
       </div>
-
-      <div class="project-item">
-        <div class="project-image">
-          <img src="Assets/images/Runes&Realms.png" alt="Runes & Realms Project">
-        </div>
-        <div class="project-content">
-          <h5>MERN Stack | Generative AI </h5>
-          <hr class="card-line">
-          <p class="descrption">An interactive storytelling platform where users co-author branching narratives with an
-            AI. Features a full game economy with unlockable genres, consumable "boons," and dynamically generated,
-            themed PDF trophies for completed stories.</p>
-          <button class="button" onclick="window.open('https://www.runesandrealms.tech/', '_blank')">
-            <h3 class="button-text">Learn More</h3>
-          </button>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-image">
-          <img src="Assets/images/base-converter.png" alt="">
-        </div>
-        <div class="project-content">
-          <h5>Inline Assembly | C++</h5>
-          <hr class="card-line">
-          <p class="descrption">This project demonstrates a Base Converter implemented in C++ with inline assembly,
-            showcasing the use of assembly instructions alongside high-level code. It supports conversions between
-            Decimal, Binary, and Hexadecimal number systems.</p>
-          <button class="button"
-            onclick="window.open(href='https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter', '_blank')">
-            <h3 class="button-text">Learn More</h3>
-          </button>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-image">
-          <img src="Assets/images/credit-card.png" alt="">
-        </div>
-        <div class="project-content">
-          <h5>C++</h5>
-          <hr class="card-line">
-          <p class="descrption">This project is a terminal-based program that validates credit card numbers using the
-            Luhn Algorithm. It also identifies the card issuer based on the input credit card number.</p>
-          <button class="button"
-            onclick="window.open(href='https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card', '_blank')">
-            <h3 class="button-text">Learn More</h3>
-          </button>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-image">
-          <img src="Assets/images/Al-Asma-ul-Husna.png" alt="">
-        </div>
-        <div class="project-content">
-          <h5>Html | Css | JavaScript</h5>
-          <hr class="card-line">
-          <p class="descrption">A simple website built with HTML, CSS, and JavaScript that displays the Names of Allah.
-            Users can click on a name to hear its pronunciation, offering a seamless and engaging experience.</p>
-          <button class="button"
-            onclick="window.open(href='Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html', '_blank')">
-            <h3 class="button-text">Learn More</h3>
-          </button>
-        </div>
-      </div>
-
-
     </div>
-
   </section>
 
   <hr>
@@ -241,6 +245,7 @@
 
 
 
+  <script src="Assets/JS/main.js"></script>
 </body>
 
 </html>
