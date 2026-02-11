@@ -3,243 +3,475 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Zohaib's Portfolio</title>
-
-
+  <title>zohaib.dev — software engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="description" content="Zohaib Ahmad - Software Engineer who codes, designs, and builds AI" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="Assets/images/favicon.svg" />
+  <link rel="alternate icon" href="Assets/images/favicon.ico" />
+  
   <link rel="stylesheet" href="Assets/CSS/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/5f6c1b1f4e.js" crossorigin="anonymous"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="navbar-item container">
-      <a href="#">
-        <div class="icon"><i class="fa-solid fa-id-card fa-2xl"></i></div>
-      </a>
-      <a href="#skills">
-        <div class="icon"><i class="fa-solid fa-gears fa-2xl"></i></div>
-      </a>
-      <a href="#projects">
-        <div class="icon"><i class="fa-solid fa-code fa-2xl"></i></div>
-      </a>
-      <a href="#footer">
-        <div class="icon"><i class="fa-solid fa-envelope fa-2xl"></i></div>
-      </a>
+  <!-- Terminal Header -->
+  <header class="terminal-header">
+    <div class="terminal-bar">
+      <div class="terminal-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="terminal-title">zohaib@portfolio:~$</div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+      </button>
+    </div>
+  </header>
 
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-wrapper">
+      <a href="#" class="logo">
+        <span class="bracket">[</span>
+        <span class="logo-text">ZA</span>
+        <span class="bracket">]</span>
+      </a>
+      <div class="nav-menu">
+        <a href="#work" class="nav-item" data-text="work">work</a>
+        <a href="#skills" class="nav-item" data-text="skills">skills</a>
+        <a href="#contact" class="nav-item" data-text="contact">contact</a>
+      </div>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
-  <section>
-    <main>
-      <div class="main container">
-        <div class="main-left">
-          <div class="image">
-            <img class="profile" src="Assets/images/profile.jpg" width="250px" height="250px" />
-          </div>
-        </div>
-        <div class="main-right">
 
-          <h1 class="title">Zohaib Ahmad</h1>
-          <h4 class="subtitle">Software Engineer</h4>
-        
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="ascii-art">
+          <pre>
+ ____  ___  _  _   _    ___ ___     _   _  _ __  __   _   ___ 
+|_  / / _ \| || | /_\  |_ _| _ )   /_\ | || |  \/  | /_\ |   \
+ / / | (_) | __ |/ _ \  | || _ \  / _ \| __ | |\/| |/ _ \| |) |
+/___| \___/|_||_/_/ \_\|___|___/ /_/ \_\_||_|_|  |_/_/ \_\___/
+          </pre>
+        </div>
+        <h1 class="glitch-text" data-text="SOFTWARE ENGINEER">SOFTWARE ENGINEER</h1>
+        <div class="terminal-output">
+          <p class="typing-text">
+            <span class="prompt">$</span> 
+            <span id="typed-text"></span>
+            <span class="cursor-blink">_</span>
+          </p>
+        </div>
+        <div class="hero-tags">
+          <span class="tag">#fullstack</span>
+          <span class="tag">#ai-ml</span>
+          <span class="tag">#ui-ux</span>
+          <span class="tag">#low-level</span>
+        </div>
+        <div class="cta-buttons">
+          <a href="#work" class="btn-primary">
+            <span class="btn-icon">→</span>
+            <span>view_projects()</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span class="btn-icon">✉</span>
+            <span>get_in_touch()</span>
+          </a>
         </div>
       </div>
-    </main>
-  </section>
-
-  <hr>
-
-  <section id="skills">
-    <div class="container">
-      <div class="title2">
-        <h1>I AM GOOD AT</h1>
-      </div>
-      <div class="skills-container">
-        <div class="grid-item">
-          <div class="grid-inner3">
-            <div class="image1"><img class="gif" src="Assets/images/design.gif" height="160px" width="160px" alt=""></div>
-            <div class="text">
-              <P>
-                Designing has always been one of my favorite parts of creating something new.
-                I enjoy turning ideas into easy-to-use and visually appealing designs. During
-                my studies, I worked on several projects, including designing the UI for our
-                final year project, "Yurt," using Figma. I’ve also explored Blender and 3D modeling.
-                . For me, good design is about making technology simple and enjoyable to use.
-              </P>
+      
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="window-header">
+            <div class="window-dots">
+              <span></span><span></span><span></span>
             </div>
+            <span class="window-title">profile.js</span>
           </div>
-        </div>
-
-
-        <div class="grid-item">
-          <div class="grid-inner2">
-            <div class="image1"><img class="gif" src="Assets/images/coding.gif" height="160px" width="160px" alt=""></div>
-
-            <div class="text1">
-              <P>Programming is where I feel most at home. I’ve worked with languages like Python,
-                JavaScript, Java, and C++ to bring projects to life. For our final year project, I
-                developed the backend using Express.js and MongoDB, creating a solid and efficient
-                foundation for the app. I also enjoy working with low-level programming, which helps me
-                understand how computers really work. Solving problems and building systems from scratch
-                is something I truly enjoy.</P>
-            </div>
+          <div class="code-content">
+            <pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Zohaib Ahmad"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Software Engineer"</span>,
+  <span class="code-prop">location</span>: <span class="code-string">"Pakistan"</span>,
+  
+  <span class="code-prop">languages</span>: [
+    <span class="code-string">"JavaScript"</span>,
+    <span class="code-string">"Python"</span>,
+    <span class="code-string">"C++"</span>,
+    <span class="code-string">"Java"</span>
+  ],
+  <span class="code-prop">technologies</span>: {
+    <span class="code-prop">frontend</span>: [<span class="code-string">"Next.js"</span>, <span class="code-string">"React"</span>],
+    <span class="code-prop">backend</span>: [<span class="code-string">"Node.js"</span>, <span class="code-string">"Express"</span>],
+    <span class="code-prop">databases</span>: [<span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MongoDB"</span>],
+    <span class="code-prop">ai</span>: [<span class="code-string">"LLMs"</span>]
+  },
+  <span class="code-prop">tools</span>: [
+    <span class="code-string">"Docker"</span>,
+    <span class="code-string">"AWS"</span>,
+    <span class="code-string">"Prisma"</span>,
+    <span class="code-string">"Stripe"</span>,
+    <span class="code-string">"Figma"</span>
+  ],
+  
+  <span class="code-prop">status</span>: <span class="code-string">"Available"</span>
+};</code></pre>
           </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="grid-inner1">
-            <div class="image1"><img class="gif" src="Assets/images/ml.gif" height="160px" width="160px" alt=""></div>
-            <div class="text">
-              <P>
-                Machine learning is an area I’m really passionate about. I’m especially interested
-                in large language models (LLMs). As part of our final year project,
-                I built a chatbot using the Llama 3.1 model, which was a great learning experience.
-                I’ve also taken some courses to deepen my understanding of machine learning
-                concepts and techniques. I’m excited to keep exploring this field and see how
-                AI can solve real-world problems.
-              </P>
+          <div class="profile-image-container">
+            <div class="profile-wrapper">
+              <img src="Assets/images/profile.jpg" alt="Zohaib Ahmad" class="profile-img profile-img-gray" />
+              <div class="profile-img-color-wrapper">
+                <img src="Assets/images/profile.jpg" alt="Zohaib Ahmad" class="profile-img profile-img-color" />
+              </div>
+              <div class="scan-line"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <hr>
-  <section id="projects">
-    <div class="container">
-      <h1 class="project-heading">Projects</h1>
 
-      <div class="project-container">
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-bracket">{"</span>
+        <span class="title-text">WHAT I DO</span>
+        <span class="title-bracket">"}</span>
+      </h2>
+      <div class="section-line"></div>
+    </div>
 
-
-        <div class="project-item" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="500">
-          <div class="project-image">
-            <img src="Assets/images/yurt.png" alt="">
+    <div class="skills-grid">
+      <div class="skill-card card-dev">
+        <div class="card-header">
+          <div class="card-icon">
+            <img src="Assets/images/coding.gif" alt="Development" />
           </div>
-          <div class="project-content">
-            <h5>Javascript | Express</h5>
-            <hr class="card-line">
-            <p class="descrption">Yurt is a centralized collaborative learning platform designed to address the unique
-              challenges and demands of modern students, providing an all-in-one solution to streamline academic tasks and
-              enhance productivity</p>
-            <button class="button" onclick="window.open('https://github.com/zohaib-ah/yurt', '_blank')">
-              <h3 class="button-text">Learn More</h3>
-            </button>
-
-          </div>
+          <div class="card-number">01</div>
         </div>
-
-        <div class="project-item" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="500">
-          <div class="project-image">
-            <img src="Assets/images/Runes&Realms.png" alt="Runes & Realms Project">
-          </div>
-          <div class="project-content">
-            <h5>MERN Stack | Generative AI </h5>
-            <hr class="card-line">
-            <p class="descrption">An interactive storytelling platform where users co-author branching narratives with an
-              AI. Features a full game economy with unlockable genres, consumable "boons," and dynamically generated,
-              themed PDF trophies for completed stories.</p>
-            <button class="button" onclick="window.open('https://www.runesandrealms.tech/', '_blank')">
-              <h3 class="button-text">Learn More</h3>
-            </button>
-          </div>
+        <h3 class="card-title">FULL-STACK_DEV</h3>
+        <div class="card-divider"></div>
+        <p class="card-desc">
+          I build scalable web applications from scratch. Backend with Express.js & MongoDB, 
+          frontend with modern frameworks. I also dive into low-level programming with C++ 
+          and Assembly because understanding how computers work matters.
+        </p>
+        <div class="card-tech">
+          <span>JavaScript</span>
+          <span>Python</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+          <span>C++</span>
+          <span>Java</span>
         </div>
+      </div>
 
-        <div class="project-item" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="500">
-          <div class="project-image">
-            <img src="Assets/images/base-converter.png" alt="">
+      <div class="skill-card card-design">
+        <div class="card-header">
+          <div class="card-icon">
+            <img src="Assets/images/design.gif" alt="Design" />
           </div>
-          <div class="project-content">
-            <h5>Inline Assembly | C++</h5>
-            <hr class="card-line">
-            <p class="descrption">This project demonstrates a Base Converter implemented in C++ with inline assembly,
-              showcasing the use of assembly instructions alongside high-level code. It supports conversions between
-              Decimal, Binary, and Hexadecimal number systems.</p>
-            <button class="button"
-              onclick="window.open('https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter', '_blank')">
-              <h3 class="button-text">Learn More</h3>
-            </button>
-          </div>
+          <div class="card-number">02</div>
         </div>
-
-        <div class="project-item" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="500">
-          <div class="project-image">
-            <img src="Assets/images/credit-card.png" alt="">
-          </div>
-          <div class="project-content">
-            <h5>C++</h5>
-            <hr class="card-line">
-            <p class="descrption">This project is a terminal-based program that validates credit card numbers using the
-              Luhn Algorithm. It also identifies the card issuer based on the input credit card number.</p>
-            <button class="button"
-              onclick="window.open('https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card', '_blank')">
-              <h3 class="button-text">Learn More</h3>
-            </button>
-          </div>
+        <h3 class="card-title">UI/UX_DESIGN</h3>
+        <div class="card-divider"></div>
+        <p class="card-desc">
+          Design isn't just about making things pretty—it's about making them work. 
+          I prototype in Figma, experiment with 3D in Blender, and believe good design 
+          should feel invisible.
+        </p>
+        <div class="card-tech">
+          <span>Figma</span>
+          <span>Blender</span>
+          <span>3D Modeling</span>
+          <span>Prototyping</span>
         </div>
+      </div>
 
-        <div class="project-item" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="500">
-          <div class="project-image">
-            <img src="Assets/images/Al-Asma-ul-Husna.png" alt="">
+      <div class="skill-card card-ai">
+        <div class="card-header">
+          <div class="card-icon">
+            <img src="Assets/images/ml.gif" alt="AI/ML" />
           </div>
-          <div class="project-content">
-            <h5>Html | Css | JavaScript</h5>
-            <hr class="card-line">
-            <p class="descrption">A simple website built with HTML, CSS, and JavaScript that displays the Names of Allah.
-              Users can click on a name to hear its pronunciation, offering a seamless and engaging experience.</p>
-            <button class="button"
-              onclick="window.open('Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html', '_blank')">
-              <h3 class="button-text">Learn More</h3>
-            </button>
-          </div>
+          <div class="card-number">03</div>
         </div>
-
-
+        <h3 class="card-title">AI_&_ML</h3>
+        <div class="card-divider"></div>
+        <p class="card-desc">
+          Fascinated by LLMs and how AI can solve real problems. Built chatbots with 
+          Llama 3.1, explored machine learning concepts, and constantly learning how 
+          to make AI more accessible and useful.
+        </p>
+        <div class="card-tech">
+          <span>LLMs</span>
+          <span>Python</span>
+          <span>Llama 3.1</span>
+          <span>ML Algorithms</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr>
+  <!-- Projects Section -->
+  <section id="work" class="work">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-bracket">{"</span>
+        <span class="title-text">SELECTED WORK</span>
+        <span class="title-bracket">"}</span>
+      </h2>
+      <div class="section-line"></div>
+    </div>
 
-  <footer id="footer">
-    <h1 class="footer-heading">GET IN TOUCH</h1>
-    <div class="socials">
-      <div class="social-item">
-        <i class="fa-brands fa-linkedin fa-xl social-icons" style="color: #000000;"></i>
-        <a href="https://www.linkedin.com/in/zohaib-ahmad-1108281ba/" style="color: #000000; text-decoration: none;">
-          <h4>LinkedIn</h4>
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <article class="project-item featured">
+        <div class="project-number">001</div>
+        <div class="project-content">
+          <div class="project-image">
+            <img src="Assets/images/Runes&Realms.png" alt="Runes & Realms" />
+            <div class="image-overlay">
+              <a href="https://www.runesandrealms.tech/" target="_blank" class="project-link">
+                VISIT_SITE →
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>MERN</span>
+              <span>GENERATIVE_AI</span>
+              <span>FULL-STACK</span>
+            </div>
+            <h3 class="project-title">RUNES_&_REALMS</h3>
+            <p class="project-desc">
+              Interactive storytelling platform where users co-author branching narratives with AI. 
+              Features a complete game economy, unlockable genres, consumable power-ups, and 
+              dynamically generated PDF trophies for completed stories.
+            </p>
+            <div class="project-links">
+              <a href="https://www.runesandrealms.tech/" target="_blank" class="link-btn">
+                <span>LIVE_DEMO</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-item">
+        <div class="project-number">002</div>
+        <div class="project-content">
+          <div class="project-image">
+            <img src="Assets/images/yurt.png" alt="Yurt" />
+            <div class="image-overlay">
+              <a href="https://github.com/zohaib-ah/yurt" target="_blank" class="project-link">
+                VIEW_CODE →
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>EXPRESS.JS</span>
+              <span>MONGODB</span>
+              <span>JAVASCRIPT</span>
+            </div>
+            <h3 class="project-title">YURT</h3>
+            <p class="project-desc">
+              Centralized collaborative learning platform designed for modern students. 
+              Streamlines academic tasks, enhances productivity, and provides an all-in-one 
+              solution for educational collaboration.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/zohaib-ah/yurt" target="_blank" class="link-btn">
+                <span>GITHUB</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-item">
+        <div class="project-number">003</div>
+        <div class="project-content">
+          <div class="project-image">
+            <img src="Assets/images/Al-Asma-ul-Husna.png" alt="Al-Asma-ul-Husna" />
+            <div class="image-overlay">
+              <a href="Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html" target="_blank" class="project-link">
+                VIEW_PROJECT →
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JAVASCRIPT</span>
+            </div>
+            <h3 class="project-title">AL-ASMA-UL-HUSNA</h3>
+            <p class="project-desc">
+              Interactive website displaying the 99 Names of Allah with audio pronunciation. 
+              Clean interface with smooth interactions for an engaging spiritual experience.
+            </p>
+            <div class="project-links">
+              <a href="Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html" target="_blank" class="link-btn">
+                <span>VIEW_LIVE</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-item">
+        <div class="project-number">004</div>
+        <div class="project-content">
+          <div class="project-image">
+            <img src="Assets/images/base-converter.png" alt="Base Converter" />
+            <div class="image-overlay">
+              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter" target="_blank" class="project-link">
+                VIEW_CODE →
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>C++</span>
+              <span>ASSEMBLY</span>
+              <span>LOW-LEVEL</span>
+            </div>
+            <h3 class="project-title">BASE_CONVERTER</h3>
+            <p class="project-desc">
+              Number system converter using inline assembly. Supports Decimal, Binary, and 
+              Hexadecimal conversions. Demonstrates low-level programming and assembly integration.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter" target="_blank" class="link-btn">
+                <span>GITHUB</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="project-item">
+        <div class="project-number">005</div>
+        <div class="project-content">
+          <div class="project-image">
+            <img src="Assets/images/credit-card.png" alt="Credit Card Validator" />
+            <div class="image-overlay">
+              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card" target="_blank" class="project-link">
+                VIEW_CODE →
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>C++</span>
+              <span>ALGORITHMS</span>
+            </div>
+            <h3 class="project-title">CREDIT_CARD_VALIDATOR</h3>
+            <p class="project-desc">
+              Terminal-based credit card validator using the Luhn Algorithm. Verifies card 
+              numbers and identifies card issuers with clean, efficient code.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card" target="_blank" class="link-btn">
+                <span>GITHUB</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-bracket">{"</span>
+        <span class="title-text">GET IN TOUCH</span>
+        <span class="title-bracket">"}</span>
+      </h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-terminal">
+        <div class="terminal-window">
+          <div class="terminal-header-bar">
+            <span>contact.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="prompt">$</span> cat contact.txt</p>
+            <p class="output">Looking for a developer who can code, design, and ship?</p>
+            <p class="output">Let's build something together.</p>
+            <p><span class="prompt">$</span> ./connect.sh</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/zohaib-ahmad-1108281ba/" target="_blank" class="contact-item">
+          <span class="contact-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </span>
+          <span class="contact-label">LINKEDIN</span>
+          <span class="contact-arrow">→</span>
+        </a>
+
+        <a href="https://github.com/zohaib-ah" target="_blank" class="contact-item">
+          <span class="contact-icon">
+            <i class="fa-brands fa-github"></i>
+          </span>
+          <span class="contact-label">GITHUB</span>
+          <span class="contact-arrow">→</span>
+        </a>
+
+        <a href="tel:+923079177810" class="contact-item">
+          <span class="contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </span>
+          <span class="contact-label">+92_307_9177810</span>
+          <span class="contact-arrow">→</span>
         </a>
       </div>
+    </div>
+  </section>
 
-      <div class="social-item">
-        <i class="fa-brands fa-github fa-xl social-icons " style="color: #000000;"></i>
-        <a href="https://github.com/zohaib-ah" style="color: #000000; text-decoration: none;">
-          <h4>GitHub</h4>
-        </a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>© <span id="current-year"></span> ZOHAIB_AHMAD</p>
       </div>
-
-      <div class="social-item">
-        <i class="fa-solid fa-phone fa-xl social-icons" style="color: #000000;"></i>
-        <h4 style="color: #000000;  text-decoration: none;">+923079177810</h4>
+      <div class="footer-right">
+        <a href="#" class="footer-link" id="back-to-top">BACK_TO_TOP ↑</a>
       </div>
-
     </div>
   </footer>
 
-
-
   <script src="Assets/JS/main.js"></script>
-  <script src="Assets/JS/vanilla-tilt.min.js"></script>
 </body>
 
 </html>
