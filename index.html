@@ -3,140 +3,442 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>zohaib.dev — software engineer</title>
+  <title>Zohaib Ahmad — Software Engineer & Creative Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Zohaib Ahmad - Software Engineer who codes, designs, and builds AI" />
-  
+  <meta name="description"
+    content="Zohaib Ahmad — Award-winning Software Engineer who codes, designs, and builds AI-powered experiences. Full-stack developer specializing in React, Next.js, Node.js and LLMs." />
+  <meta name="keywords"
+    content="Zohaib Ahmad, Software Engineer, Full Stack Developer, UI/UX Designer, AI, Machine Learning, Portfolio" />
+  <meta name="author" content="Zohaib Ahmad" />
+  <meta property="og:title" content="Zohaib Ahmad — Software Engineer" />
+  <meta property="og:description" content="Software Engineer who codes, designs, and builds AI-powered experiences." />
+  <meta property="og:type" content="website" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="Assets/images/favicon.svg" />
   <link rel="alternate icon" href="Assets/images/favicon.ico" />
-  
-  <link rel="stylesheet" href="Assets/CSS/style.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/5f6c1b1f4e.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="Assets/CSS/style.css" />
 </head>
 
 <body>
-  <!-- Terminal Header -->
-  <header class="terminal-header">
-    <div class="terminal-bar">
-      <div class="terminal-dots">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Noise Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-name">
+        <span class="loader-letter" data-letter="Z">Z</span>
+        <span class="loader-letter" data-letter="O">O</span>
+        <span class="loader-letter" data-letter="H">H</span>
+        <span class="loader-letter" data-letter="A">A</span>
+        <span class="loader-letter" data-letter="I">I</span>
+        <span class="loader-letter" data-letter="B">B</span>
       </div>
-      <div class="terminal-title">zohaib@portfolio:~$</div>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">◐</span>
-      </button>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-counter">
+        <span id="loader-percent">0</span>%
+      </div>
     </div>
-  </header>
+  </div>
 
   <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-wrapper">
-      <a href="#" class="logo">
-        <span class="bracket">[</span>
-        <span class="logo-text">ZA</span>
-        <span class="bracket">]</span>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo magnetic" data-magnetic>
+        <span class="logo-text">zohaib</span>
+        <span class="logo-dot"></span>
       </a>
-      <div class="nav-menu">
-        <a href="#work" class="nav-item" data-text="work">work</a>
-        <a href="#skills" class="nav-item" data-text="skills">skills</a>
-        <a href="#contact" class="nav-item" data-text="contact">contact</a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#work" class="nav-link magnetic" data-magnetic data-text="Work">
+          <span>Work</span>
+        </a>
+        <a href="#about" class="nav-link magnetic" data-magnetic data-text="About">
+          <span>About</span>
+        </a>
+        <a href="#skills" class="nav-link magnetic" data-magnetic data-text="Skills">
+          <span>Skills</span>
+        </a>
+        <a href="#contact" class="nav-link magnetic" data-magnetic data-text="Contact">
+          <span>Contact</span>
+        </a>
       </div>
-      <button class="menu-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
+
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Toggle Menu">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
       </button>
     </div>
   </nav>
 
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#work" class="mobile-menu-link">
+        <span class="mobile-menu-number">01</span>
+        <span class="mobile-menu-text">Work</span>
+      </a>
+      <a href="#about" class="mobile-menu-link">
+        <span class="mobile-menu-number">02</span>
+        <span class="mobile-menu-text">About</span>
+      </a>
+      <a href="#skills" class="mobile-menu-link">
+        <span class="mobile-menu-number">03</span>
+        <span class="mobile-menu-text">Skills</span>
+      </a>
+      <a href="#contact" class="mobile-menu-link">
+        <span class="mobile-menu-number">04</span>
+        <span class="mobile-menu-text">Contact</span>
+      </a>
+    </div>
+  </div>
+
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="ascii-art">
-          <pre>
- ____  ___  _  _   _    ___ ___     _   _  _ __  __   _   ___ 
-|_  / / _ \| || | /_\  |_ _| _ )   /_\ | || |  \/  | /_\ |   \
- / / | (_) | __ |/ _ \  | || _ \  / _ \| __ | |\/| |/ _ \| |) |
-/___| \___/|_||_/_/ \_\|___|___/ /_/ \_\_||_|_|  |_/_/ \_\___/
-          </pre>
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid-bg"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Available for opportunities</span>
+      </div>
+
+      <h1 class="hero-title">
+        <div class="title-line">
+          <span class="title-word" data-reveal>Software</span>
         </div>
-        <h1 class="glitch-text" data-text="SOFTWARE ENGINEER">SOFTWARE ENGINEER</h1>
-        <div class="terminal-output">
-          <p class="typing-text">
-            <span class="prompt">$</span> 
-            <span id="typed-text"></span>
-            <span class="cursor-blink">_</span>
-          </p>
+        <div class="title-line">
+          <span class="title-word title-stroke" data-reveal>Engineer</span>
+          <span class="title-ampersand" data-reveal>&</span>
         </div>
-        <div class="hero-tags">
-          <span class="tag">#fullstack</span>
-          <span class="tag">#ai-ml</span>
-          <span class="tag">#ui-ux</span>
-          <span class="tag">#low-level</span>
+        <div class="title-line">
+          <span class="title-word title-gradient" data-reveal>Creative</span>
         </div>
-        <div class="cta-buttons">
-          <a href="#work" class="btn-primary">
-            <span class="btn-icon">→</span>
-            <span>view_projects()</span>
+        <div class="title-line">
+          <span class="title-word" data-reveal>Developer</span>
+          <span class="title-accent" data-reveal>.</span>
+        </div>
+      </h1>
+
+      <div class="hero-bottom">
+        <div class="hero-info">
+          <p class="hero-description" data-reveal-text>I build exceptional digital experiences that live at the
+            intersection of design and engineering — from AI-powered platforms to pixel-perfect interfaces.</p>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#work" class="btn-primary magnetic" data-magnetic>
+            <span class="btn-text">View Projects</span>
+            <span class="btn-arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
           </a>
-          <a href="#contact" class="btn-secondary">
-            <span class="btn-icon">✉</span>
-            <span>get_in_touch()</span>
+          <a href="#contact" class="btn-secondary magnetic" data-magnetic>
+            <span class="btn-text">Let's Talk</span>
           </a>
+        </div>
+
+        <div class="hero-scroll-indicator">
+          <div class="scroll-line"></div>
+          <span class="scroll-text">Scroll</span>
         </div>
       </div>
-      
-      <div class="hero-visual">
-        <div class="code-window">
-          <div class="window-header">
-            <div class="window-dots">
-              <span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- Marquee Divider -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>FULL-STACK</span>
+        <span class="marquee-dot">✦</span>
+        <span>UI/UX DESIGN</span>
+        <span class="marquee-dot">✦</span>
+        <span>AI & ML</span>
+        <span class="marquee-dot">✦</span>
+        <span>NEXT.JS</span>
+        <span class="marquee-dot">✦</span>
+        <span>REACT</span>
+        <span class="marquee-dot">✦</span>
+        <span>NODE.JS</span>
+        <span class="marquee-dot">✦</span>
+        <span>PYTHON</span>
+        <span class="marquee-dot">✦</span>
+        <span>FIGMA</span>
+        <span class="marquee-dot">✦</span>
+        <span>FULL-STACK</span>
+        <span class="marquee-dot">✦</span>
+        <span>UI/UX DESIGN</span>
+        <span class="marquee-dot">✦</span>
+        <span>AI & ML</span>
+        <span class="marquee-dot">✦</span>
+        <span>NEXT.JS</span>
+        <span class="marquee-dot">✦</span>
+        <span>REACT</span>
+        <span class="marquee-dot">✦</span>
+        <span>NODE.JS</span>
+        <span class="marquee-dot">✦</span>
+        <span>PYTHON</span>
+        <span class="marquee-dot">✦</span>
+        <span>FIGMA</span>
+        <span class="marquee-dot">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Work Section -->
+  <section id="work" class="work-section">
+    <div class="section-label">
+      <span class="label-number">01</span>
+      <span class="label-line"></span>
+      <span class="label-text">Selected Work</span>
+    </div>
+
+    <div class="work-header">
+      <h2 class="work-title" data-reveal>
+        <span>Featured</span>
+        <span class="work-title-outline">Projects</span>
+      </h2>
+    </div>
+
+    <div class="projects-list">
+      <!-- Project 1 -->
+      <a href="https://www.runesandrealms.tech/" target="_blank" class="project-card" data-project="01">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="project-number">01</span>
+            <div class="project-tags">
+              <span>MERN</span>
+              <span>Generative AI</span>
+              <span>Full-Stack</span>
             </div>
-            <span class="window-title">profile.js</span>
           </div>
-          <div class="code-content">
-            <pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
-  <span class="code-prop">name</span>: <span class="code-string">"Zohaib Ahmad"</span>,
-  <span class="code-prop">role</span>: <span class="code-string">"Software Engineer"</span>,
-  <span class="code-prop">location</span>: <span class="code-string">"Pakistan"</span>,
-  
-  <span class="code-prop">languages</span>: [
-    <span class="code-string">"JavaScript"</span>,
-    <span class="code-string">"Python"</span>,
-    <span class="code-string">"C++"</span>,
-    <span class="code-string">"Java"</span>
-  ],
-  <span class="code-prop">technologies</span>: {
-    <span class="code-prop">frontend</span>: [<span class="code-string">"Next.js"</span>, <span class="code-string">"React"</span>],
-    <span class="code-prop">backend</span>: [<span class="code-string">"Node.js"</span>, <span class="code-string">"Express"</span>],
-    <span class="code-prop">databases</span>: [<span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MongoDB"</span>],
-    <span class="code-prop">ai</span>: [<span class="code-string">"LLMs"</span>]
-  },
-  <span class="code-prop">tools</span>: [
-    <span class="code-string">"Docker"</span>,
-    <span class="code-string">"AWS"</span>,
-    <span class="code-string">"Prisma"</span>,
-    <span class="code-string">"Stripe"</span>,
-    <span class="code-string">"Figma"</span>
-  ],
-  
-  <span class="code-prop">status</span>: <span class="code-string">"Available"</span>
-};</code></pre>
-          </div>
-          <div class="profile-image-container">
-            <div class="profile-wrapper">
-              <img src="Assets/images/profile.jpg" alt="Zohaib Ahmad" class="profile-img profile-img-gray" />
-              <div class="profile-img-color-wrapper">
-                <img src="Assets/images/profile.jpg" alt="Zohaib Ahmad" class="profile-img profile-img-color" />
-              </div>
-              <div class="scan-line"></div>
+
+          <div class="project-visual">
+            <div class="project-img-wrapper">
+              <img src="Assets/images/Runes&Realms.png" alt="Runes & Realms - Interactive AI Storytelling Platform"
+                loading="lazy" />
             </div>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Runes & Realms</h3>
+            <p class="project-description">Interactive storytelling platform where users co-author branching narratives
+              with AI. Features a complete game economy, unlockable genres, and dynamically generated PDF trophies.</p>
+            <div class="project-cta">
+              <span class="project-cta-text">View Project</span>
+              <span class="project-cta-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="https://github.com/zohaib-ah/yurt" target="_blank" class="project-card" data-project="02">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="project-number">02</span>
+            <div class="project-tags">
+              <span>Express.js</span>
+              <span>MongoDB</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project-visual">
+            <div class="project-img-wrapper">
+              <img src="Assets/images/yurt.png" alt="Yurt - Collaborative Learning Platform" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Yurt</h3>
+            <p class="project-description">Centralized collaborative learning platform designed for modern students.
+              Streamlines academic tasks, enhances productivity, and provides an all-in-one solution for educational
+              collaboration.</p>
+            <div class="project-cta">
+              <span class="project-cta-text">View Code</span>
+              <span class="project-cta-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html" target="_blank" class="project-card" data-project="03">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="project-number">03</span>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project-visual">
+            <div class="project-img-wrapper">
+              <img src="Assets/images/Al-Asma-ul-Husna.png" alt="Al-Asma-ul-Husna - 99 Names of Allah" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Al-Asma-ul-Husna</h3>
+            <p class="project-description">Interactive website displaying the 99 Names of Allah with audio
+              pronunciation. Clean interface with smooth interactions for an engaging spiritual experience.</p>
+            <div class="project-cta">
+              <span class="project-cta-text">View Live</span>
+              <span class="project-cta-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter" target="_blank"
+        class="project-card" data-project="04">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="project-number">04</span>
+            <div class="project-tags">
+              <span>C++</span>
+              <span>Assembly</span>
+              <span>Low-Level</span>
+            </div>
+          </div>
+
+          <div class="project-visual">
+            <div class="project-img-wrapper">
+              <img src="Assets/images/base-converter.png" alt="Base Converter - Number System Converter"
+                loading="lazy" />
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Base Converter</h3>
+            <p class="project-description">Number system converter using inline assembly. Supports Decimal, Binary, and
+              Hexadecimal conversions. Demonstrates low-level programming and assembly integration.</p>
+            <div class="project-cta">
+              <span class="project-cta-text">View Code</span>
+              <span class="project-cta-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 5 -->
+      <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card" target="_blank"
+        class="project-card" data-project="05">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="project-number">05</span>
+            <div class="project-tags">
+              <span>C++</span>
+              <span>Algorithms</span>
+            </div>
+          </div>
+
+          <div class="project-visual">
+            <div class="project-img-wrapper">
+              <img src="Assets/images/credit-card.png" alt="Credit Card Validator" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Credit Card Validator</h3>
+            <p class="project-description">Terminal-based credit card validator using the Luhn Algorithm. Verifies card
+              numbers and identifies card issuers with clean, efficient code.</p>
+            <div class="project-cta">
+              <span class="project-cta-text">View Code</span>
+              <span class="project-cta-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="section-label">
+      <span class="label-number">02</span>
+      <span class="label-line"></span>
+      <span class="label-text">About</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-left">
+        <h2 class="about-title" data-reveal>
+          I craft digital experiences that blend
+          <span class="about-highlight">code</span>,
+          <span class="about-highlight">design</span>, and
+          <span class="about-highlight">AI</span>.
+        </h2>
+      </div>
+
+      <div class="about-right">
+        <div class="about-image-wrapper">
+          <div class="about-image-frame">
+            <img src="Assets/images/profile.jpg" alt="Zohaib Ahmad" loading="lazy" />
+          </div>
+          <div class="about-image-badge">
+            <span>Based in</span>
+            <strong>Pakistan 🇵🇰</strong>
+          </div>
+        </div>
+
+        <div class="about-bio">
+          <p>I'm a Software Engineer passionate about building products that matter. From full-stack web applications to
+            AI-powered platforms, I bring ideas to life with clean code and thoughtful design.</p>
+
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="5">0</span>
+            <span class="stat-label">Projects Shipped</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="4">0</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="10">0</span>
+            <span class="stat-label">Technologies</span>
           </div>
         </div>
       </div>
@@ -144,56 +446,54 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <div class="section-header">
-      <h2 class="section-title">
-        <span class="title-bracket">{"</span>
-        <span class="title-text">WHAT I DO</span>
-        <span class="title-bracket">"}</span>
-      </h2>
-      <div class="section-line"></div>
+  <section id="skills" class="skills-section">
+    <div class="section-label">
+      <span class="label-number">03</span>
+      <span class="label-line"></span>
+      <span class="label-text">Expertise</span>
     </div>
 
-    <div class="skills-grid">
-      <div class="skill-card card-dev">
-        <div class="card-header">
-          <div class="card-icon">
-            <img src="Assets/images/coding.gif" alt="Development" />
-          </div>
-          <div class="card-number">01</div>
+    <div class="skills-header">
+      <h2 class="skills-title" data-reveal>
+        <span>What I</span>
+        <span class="skills-title-outline">Bring</span>
+      </h2>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Full-Stack Card -->
+      <div class="bento-card bento-large" data-tilt>
+        <div class="bento-card-glow"></div>
+        <div class="bento-icon bento-icon-gif">
+          <img src="Assets/images/coding.gif" alt="Development" />
         </div>
-        <h3 class="card-title">FULL-STACK_DEV</h3>
-        <div class="card-divider"></div>
-        <p class="card-desc">
-          I build scalable web applications from scratch. Backend with Express.js & MongoDB, 
-          frontend with modern frameworks. I also dive into low-level programming with C++ 
-          and Assembly because understanding how computers work matters.
-        </p>
-        <div class="card-tech">
+        <div class="bento-number">01</div>
+        <h3 class="bento-title">Full-Stack Development</h3>
+        <p class="bento-desc">Building scalable web applications from scratch. Backend with Node.js & Express, frontend
+          with React & Next.js. I also dive into low-level programming with C++ and Assembly.</p>
+        <div class="bento-tags">
           <span>JavaScript</span>
+          <span>TypeScript</span>
           <span>Python</span>
           <span>Node.js</span>
-          <span>MongoDB</span>
+          <span>React</span>
+          <span>Next.js</span>
           <span>C++</span>
           <span>Java</span>
         </div>
       </div>
 
-      <div class="skill-card card-design">
-        <div class="card-header">
-          <div class="card-icon">
-            <img src="Assets/images/design.gif" alt="Design" />
-          </div>
-          <div class="card-number">02</div>
+      <!-- Design Card -->
+      <div class="bento-card bento-medium" data-tilt>
+        <div class="bento-card-glow"></div>
+        <div class="bento-icon bento-icon-gif">
+          <img src="Assets/images/design.gif" alt="Design" />
         </div>
-        <h3 class="card-title">UI/UX_DESIGN</h3>
-        <div class="card-divider"></div>
-        <p class="card-desc">
-          Design isn't just about making things pretty—it's about making them work. 
-          I prototype in Figma, experiment with 3D in Blender, and believe good design 
-          should feel invisible.
-        </p>
-        <div class="card-tech">
+        <div class="bento-number">02</div>
+        <h3 class="bento-title">UI/UX Design</h3>
+        <p class="bento-desc">Design isn't just about aesthetics — it's about making things work. I prototype in Figma,
+          experiment with 3D in Blender, and believe good design should feel invisible.</p>
+        <div class="bento-tags">
           <span>Figma</span>
           <span>Blender</span>
           <span>3D Modeling</span>
@@ -201,259 +501,126 @@
         </div>
       </div>
 
-      <div class="skill-card card-ai">
-        <div class="card-header">
-          <div class="card-icon">
-            <img src="Assets/images/ml.gif" alt="AI/ML" />
-          </div>
-          <div class="card-number">03</div>
+      <!-- AI/ML Card -->
+      <div class="bento-card bento-medium" data-tilt>
+        <div class="bento-card-glow"></div>
+        <div class="bento-icon bento-icon-gif">
+          <img src="Assets/images/ml.gif" alt="AI & ML" />
         </div>
-        <h3 class="card-title">AI_&_ML</h3>
-        <div class="card-divider"></div>
-        <p class="card-desc">
-          Fascinated by LLMs and how AI can solve real problems. Built chatbots with 
-          Llama 3.1, explored machine learning concepts, and constantly learning how 
-          to make AI more accessible and useful.
-        </p>
-        <div class="card-tech">
+        <div class="bento-number">03</div>
+        <h3 class="bento-title">AI & Machine Learning</h3>
+        <p class="bento-desc">Fascinated by LLMs and how AI can solve real problems. Built chatbots with Llama 3.1,
+          explored machine learning concepts, and constantly pushing the boundaries of what's possible.</p>
+        <div class="bento-tags">
           <span>LLMs</span>
           <span>Python</span>
-          <span>chat bots</span>
+          <span>Chatbots</span>
           <span>ML Algorithms</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="work" class="work">
-    <div class="section-header">
-      <h2 class="section-title">
-        <span class="title-bracket">{"</span>
-        <span class="title-text">SELECTED WORK</span>
-        <span class="title-bracket">"}</span>
-      </h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="projects-container">
-      <!-- Project 1 -->
-      <article class="project-item featured">
-        <div class="project-number">001</div>
-        <div class="project-content">
-          <div class="project-image">
-            <img src="Assets/images/Runes&Realms.png" alt="Runes & Realms" />
-            <div class="image-overlay">
-              <a href="https://www.runesandrealms.tech/" target="_blank" class="project-link">
-                VISIT_SITE →
-              </a>
-            </div>
+      <!-- Tools Card -->
+      <div class="bento-card bento-wide" data-tilt>
+        <div class="bento-card-glow"></div>
+        <h3 class="bento-title-sm">Tools & Technologies</h3>
+        <div class="tools-grid">
+          <div class="tool-item">
+            <span class="tool-name">Docker</span>
           </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span>MERN</span>
-              <span>GENERATIVE_AI</span>
-              <span>FULL-STACK</span>
-            </div>
-            <h3 class="project-title">RUNES_&_REALMS</h3>
-            <p class="project-desc">
-              Interactive storytelling platform where users co-author branching narratives with AI. 
-              Features a complete game economy, unlockable genres, consumable power-ups, and 
-              dynamically generated PDF trophies for completed stories.
-            </p>
-            <div class="project-links">
-              <a href="https://www.runesandrealms.tech/" target="_blank" class="link-btn">
-                <span>LIVE_DEMO</span>
-                <span class="arrow">→</span>
-              </a>
-            </div>
+          <div class="tool-item">
+            <span class="tool-name">AWS</span>
+          </div>
+          <div class="tool-item">
+            <span class="tool-name">Prisma</span>
+          </div>
+          <div class="tool-item">
+            <span class="tool-name">Stripe</span>
+          </div>
+          <div class="tool-item">
+            <span class="tool-name">PostgreSQL</span>
+          </div>
+          <div class="tool-item">
+            <span class="tool-name">MongoDB</span>
+          </div>
+          <div class="tool-item">
+            <span class="tool-name">Git</span>
+          </div>
+          <div class="tool-item">
+            <span class="tool-name">Figma</span>
           </div>
         </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project-item">
-        <div class="project-number">002</div>
-        <div class="project-content">
-          <div class="project-image">
-            <img src="Assets/images/yurt.png" alt="Yurt" />
-            <div class="image-overlay">
-              <a href="https://github.com/zohaib-ah/yurt" target="_blank" class="project-link">
-                VIEW_CODE →
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span>EXPRESS.JS</span>
-              <span>MONGODB</span>
-              <span>JAVASCRIPT</span>
-            </div>
-            <h3 class="project-title">YURT</h3>
-            <p class="project-desc">
-              Centralized collaborative learning platform designed for modern students. 
-              Streamlines academic tasks, enhances productivity, and provides an all-in-one 
-              solution for educational collaboration.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/zohaib-ah/yurt" target="_blank" class="link-btn">
-                <span>GITHUB</span>
-                <span class="arrow">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project-item">
-        <div class="project-number">003</div>
-        <div class="project-content">
-          <div class="project-image">
-            <img src="Assets/images/Al-Asma-ul-Husna.png" alt="Al-Asma-ul-Husna" />
-            <div class="image-overlay">
-              <a href="Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html" target="_blank" class="project-link">
-                VIEW_PROJECT →
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JAVASCRIPT</span>
-            </div>
-            <h3 class="project-title">AL-ASMA-UL-HUSNA</h3>
-            <p class="project-desc">
-              Interactive website displaying the 99 Names of Allah with audio pronunciation. 
-              Clean interface with smooth interactions for an engaging spiritual experience.
-            </p>
-            <div class="project-links">
-              <a href="Projects/Al-Asma-ul-Husna/Al-Asma-ul-Husna.html" target="_blank" class="link-btn">
-                <span>VIEW_LIVE</span>
-                <span class="arrow">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project-item">
-        <div class="project-number">004</div>
-        <div class="project-content">
-          <div class="project-image">
-            <img src="Assets/images/base-converter.png" alt="Base Converter" />
-            <div class="image-overlay">
-              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter" target="_blank" class="project-link">
-                VIEW_CODE →
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span>C++</span>
-              <span>ASSEMBLY</span>
-              <span>LOW-LEVEL</span>
-            </div>
-            <h3 class="project-title">BASE_CONVERTER</h3>
-            <p class="project-desc">
-              Number system converter using inline assembly. Supports Decimal, Binary, and 
-              Hexadecimal conversions. Demonstrates low-level programming and assembly integration.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Base%20converter" target="_blank" class="link-btn">
-                <span>GITHUB</span>
-                <span class="arrow">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 5 -->
-      <article class="project-item">
-        <div class="project-number">005</div>
-        <div class="project-content">
-          <div class="project-image">
-            <img src="Assets/images/credit-card.png" alt="Credit Card Validator" />
-            <div class="image-overlay">
-              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card" target="_blank" class="project-link">
-                VIEW_CODE →
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span>C++</span>
-              <span>ALGORITHMS</span>
-            </div>
-            <h3 class="project-title">CREDIT_CARD_VALIDATOR</h3>
-            <p class="project-desc">
-              Terminal-based credit card validator using the Luhn Algorithm. Verifies card 
-              numbers and identifies card issuers with clean, efficient code.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/zohaib-ah/Semester_Projects/tree/main/Credit card" target="_blank" class="link-btn">
-                <span>GITHUB</span>
-                <span class="arrow">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="section-header">
-      <h2 class="section-title">
-        <span class="title-bracket">{"</span>
-        <span class="title-text">GET IN TOUCH</span>
-        <span class="title-bracket">"}</span>
-      </h2>
-      <div class="section-line"></div>
-    </div>
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <div class="section-label">
+        <span class="label-number">04</span>
+        <span class="label-line"></span>
+        <span class="label-text">Contact</span>
+      </div>
 
-    <div class="contact-content">
-      <div class="contact-terminal">
-        <div class="terminal-window">
-          <div class="terminal-header-bar">
-            <span>contact.sh</span>
-          </div>
-          <div class="terminal-body">
-            <p><span class="prompt">$</span> cat contact.txt</p>
-            <p class="output">Looking for a developer who can code, design, and ship?</p>
-            <p class="output">Let's build something together.</p>
-            <p><span class="prompt">$</span> ./connect.sh</p>
-          </div>
-        </div>
+      <div class="contact-content">
+        <h2 class="contact-title" data-reveal>
+          <span>Let's create</span>
+          <span>something</span>
+          <span class="contact-title-gradient">extraordinary</span>
+          <span>together.</span>
+        </h2>
+
+        <p class="contact-subtitle">Have a project in mind? Looking for a developer who can code, design, and ship?
+          Let's build something meaningful.</p>
       </div>
 
       <div class="contact-links">
-        <a href="https://www.linkedin.com/in/zohaib-ahmad-1108281ba/" target="_blank" class="contact-item">
-          <span class="contact-icon">
+        <a href="mailto:zohaibahmad1287@gmail.com" class="contact-link magnetic" data-magnetic>
+          <span class="contact-link-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <span class="contact-link-text">zohaibahmad1287@gmail.com</span>
+          <span class="contact-link-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="https://www.linkedin.com/in/zohaib-ahmad-1108281ba/" target="_blank" class="contact-link magnetic"
+          data-magnetic>
+          <span class="contact-link-icon">
             <i class="fa-brands fa-linkedin"></i>
           </span>
-          <span class="contact-label">LINKEDIN</span>
-          <span class="contact-arrow">→</span>
+          <span class="contact-link-text">LinkedIn</span>
+          <span class="contact-link-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
         </a>
 
-        <a href="https://github.com/zohaib-ah" target="_blank" class="contact-item">
-          <span class="contact-icon">
+        <a href="https://github.com/zohaib-ah" target="_blank" class="contact-link magnetic" data-magnetic>
+          <span class="contact-link-icon">
             <i class="fa-brands fa-github"></i>
           </span>
-          <span class="contact-label">GITHUB</span>
-          <span class="contact-arrow">→</span>
+          <span class="contact-link-text">GitHub</span>
+          <span class="contact-link-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
         </a>
 
-        <a href="tel:+923079177810" class="contact-item">
-          <span class="contact-icon">
+        <a href="tel:+923079177810" class="contact-link magnetic" data-magnetic>
+          <span class="contact-link-icon">
             <i class="fa-solid fa-phone"></i>
           </span>
-          <span class="contact-label">+92_307_9177810</span>
-          <span class="contact-arrow">→</span>
+          <span class="contact-link-text">+92 307 9177810</span>
+          <span class="contact-link-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
         </a>
       </div>
     </div>
@@ -461,12 +628,18 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
+    <div class="footer-inner">
       <div class="footer-left">
-        <p>© <span id="current-year"></span> ZOHAIB_AHMAD</p>
+        <span class="footer-logo">zohaib<span class="footer-dot">.</span></span>
+        <p class="footer-copy">© <span id="current-year"></span> Zohaib Ahmad. All rights reserved.</p>
       </div>
       <div class="footer-right">
-        <a href="#" class="footer-link" id="back-to-top">BACK_TO_TOP ↑</a>
+        <a href="#hero" class="footer-back-top magnetic" data-magnetic id="back-to-top">
+          <span>Back to top</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 16V4M10 4L4 10M10 4L16 10" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
